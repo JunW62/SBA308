@@ -18,6 +18,7 @@ This project includes a function that takes in course information, assignment de
 
 - **Date Validation**: Ensures that the submission and due dates are in the correct `YYYY-MM-DD` format and are valid dates.
 - **Score Processing**: Calculates individual assignment scores and deducts points for late submissions.
+- **Future Assignment**: Assignments not yet due are excluded from the results and average calculations.
 - **Average Calculation**: Computes the average score for each learner based on their assignment scores.
 - **Error Handling**: Provides error messages for invalid data such as incorrect date formats, invalid possiable points or mismatched course IDs.
 
@@ -185,7 +186,8 @@ const LearnerSubmissions = [
 ### Erroneous Output Example 2 - Mismatched course ID
 
 ```
-Warning: Course ID Mismatch. Please verify and correct your Course ID for Introduction to JavaScript.
+Warning: Course ID Mismatch.
+Please verify and correct your Course ID for Introduction to JavaScript.
 Error detected.
 ```
 
@@ -216,6 +218,7 @@ const AssignmentGroup = {
 ### Erroneous Output Example 3 - Invalid possible points
 
 ```
-Warning: Invalid Possible Points. Please verify and correct the Possible Points for Assignment Declare a Variable.
+Warning: Invalid Possible Points.
+Please verify and correct the Possible Points for Assignment Declare a Variable.
 Error detected.
 ```

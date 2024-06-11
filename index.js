@@ -59,7 +59,7 @@ function getLearnerData(course, ag, submissions) {
                   break;
                 }
               } else {
-                throw `Warning: Invalid Possiable Points. Please verify and correct the Possiable Points for Assignment ${ag.assignments[j].name}.`;
+                throw `Warning: Invalid Possiable Points. \nPlease verify and correct the Possiable Points for Assignment ${ag.assignments[j].name}.`;
               }
             }
           }
@@ -140,7 +140,7 @@ function getLearnerData(course, ag, submissions) {
       }
       return result;
     } else {
-      throw `Warning: Course ID Mismatch. Please verify and correct your Course ID for ${CourseInfo.name}.`;
+      throw `Warning: Course ID Mismatch. \nPlease verify and correct your Course ID for ${CourseInfo.name}.`;
     }
   } catch (error) {
     console.log(error);
