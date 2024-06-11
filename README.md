@@ -19,7 +19,7 @@ This project includes a function that takes in course information, assignment de
 - **Date Validation**: Ensures that the submission and due dates are in the correct `YYYY-MM-DD` format and are valid dates.
 - **Score Processing**: Calculates individual assignment scores and deducts points for late submissions.
 - **Average Calculation**: Computes the average score for each learner based on their assignment scores.
-- **Error Handling**: Provides error messages for invalid data such as incorrect date formats or mismatched course IDs.
+- **Error Handling**: Provides error messages for invalid data such as incorrect date formats, invalid possiable points or mismatched course IDs.
 
 ## Setup
 
@@ -103,9 +103,7 @@ For the above input, the output will be:
 ]
 ```
 
-### Erroneous Input Example 1
-
-Below is an example of erroneous input data, with an invalid date format:
+### Erroneous Input Example 1 - Invalid date format
 
 ```
 const LearnerSubmissions = [
@@ -128,7 +126,7 @@ const LearnerSubmissions = [
 ];
 ```
 
-### Erroneous Output Example 1
+### Erroneous Output Example 1 - Invalid date format
 
 ```
 Warning: The date format should be YYYY-MM-DD.
@@ -136,7 +134,7 @@ Please verify and correct your Date for Declare a Variable
 Error detected.
 ```
 
-### Erroneous Input Example 2
+### Erroneous Input Example 2 - Mismatched course ID
 
 ```
 const CourseInfo = {
@@ -184,9 +182,40 @@ const LearnerSubmissions = [
 ];
 ```
 
-### Erroneous Output Example 2
+### Erroneous Output Example 2 - Mismatched course ID
 
 ```
 Warning: Course ID Mismatch. Please verify and correct your Course ID for Introduction to JavaScript.
+Error detected.
+```
+
+### Erroneous Input Example 3 - Invalid possible points
+
+```
+const AssignmentGroup = {
+  id: 12345,
+  name: "Fundamentals of JavaScript",
+  course_id: 451,
+  assignments: [
+    {
+      id: 1,
+      name: "Declare a Variable",
+      due_at: "2023-01-25",
+      points_possible: 0, // Invalid possible points
+    },
+    {
+      id: 2,
+      name: "Write a Function",
+      due_at: "2023-02-27",
+      points_possible: 150,
+    },
+  ],
+};
+```
+
+### Erroneous Output Example 3 - Invalid possible points
+
+```
+Warning: Invalid Possible Points. Please verify and correct the Possible Points for Assignment Declare a Variable.
 Error detected.
 ```
